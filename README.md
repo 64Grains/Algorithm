@@ -35,3 +35,11 @@ Secondly, you need to add the system environment variable VSHOME, whose value is
 
 At last, you can modify the template files of the header file and the source file, such as adding copyright and comment information etc. to the file header. The template file of the header file is generally located at `C:\Program Files(x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\vcprojectitems\hfile.h`, and the template file of the source file is generally located at `C:\Program Files(x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\vcprojectitems\newc++file.cpp`.
 
+## Structure
+
+[Published library packages](_Publish/README.md)
+
+[Library items](LibraryItems/README.md)
+
+[Tools](Tools/README.md)
+
