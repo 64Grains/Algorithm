@@ -36,12 +36,12 @@ The file hierarchy is as follows:
 
 ```
 _Publish
-	NeatCore
-		NeatCore-1.100.0.0.7z
-		NeatCore-1.100.1.0.7z
-		NeatCore-1.101.0.0.7z
-	NeatData
-		NeatCore-1.100.0.0.7z
-		NeatCore-1.200.0.0.7z
+    NeatCore
+        NeatCore-1.100.0.0.7z
+        NeatCore-1.100.1.0.7z
+        NeatCore-1.101.0.0.7z
+    NeatData
+        NeatCore-1.100.0.0.7z
+        NeatCore-1.200.0.0.7z
 ```
 
