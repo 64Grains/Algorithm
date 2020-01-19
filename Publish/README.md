@@ -1,4 +1,4 @@
-# _Publish
+# Publish
 
 This directory stores the published library packages. Under this directory, the file `PublishVersion.txt` records the published library names and their versions.
 

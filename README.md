@@ -37,7 +37,7 @@ At last, you can modify the template files of the header file and the source fil
 
 ## Structure
 
-[Published library packages](_Publish/README.md)
+[Published library packages](Publish/README.md)
 
 [Library items](LibraryItems/README.md)
 
