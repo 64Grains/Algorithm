@@ -2,7 +2,7 @@
 
 ## Automation Script
 
-Under the folder `AutoScript`, contains automation template scripts for compiling and cleaning solutions, packaging compilation libraries.
+Under the folder `AutoScript`, contains automation template batch scripts for compiling and cleaning solutions, packaging compilation libraries.
 
 ## Compression Tool
 
