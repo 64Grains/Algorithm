@@ -1,5 +1,5 @@
 @title Build Solution
-echo off & setlocal EnableDelayedExpansion
+@echo off & setlocal EnableDelayedExpansion
 
 :: Usage: Batch script name + solution path
 
