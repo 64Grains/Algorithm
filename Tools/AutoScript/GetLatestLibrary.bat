@@ -20,35 +20,35 @@ for /f "delims=: tokens=1*" %%i in ('Type %abReadmeFile% ^| findstr /n "Dependen
 
 for /f "tokens=1* delims=:" %%a in ('Type %abReadmeFile% ^| findstr /n .*') do (
     if %%a geq !n! (
-	    if "%%b"=="" (
-		    goto EndTag
-		) else (
-		    call :ParseNameVersion "%%b"
-		)
-	)
+        if "%%b"=="" (
+            goto EndTag
+        ) else (
+            call :ParseNameVersion "%%b" || (exit /B 1)
+        )
+    )
 )
 
 :EndTag
 exit /B 0
 
-:: Parse the library name and version from the string
+:: Parse the libraries name and version from the string
 :ParseNameVersion
 for /f "tokens=1,*" %%i in ("%~1") do (
     if "%%i"=="None" (
-	    goto EndTag
-	)
+        goto EndTag
+    )
 
-	if %abFirstWrite% EQU 1 (
-	    if not exist "%abSolutionDir%_Pub\" mkdir "%abSolutionDir%_Pub\"
-		if exist %abNoteFile% del %abNoteFile%
-		echo Dependend: > %abNoteFile%
-		set abFirstWrite=0
-	)
+    if %abFirstWrite% EQU 1 (
+        if not exist "%abSolutionDir%_Pub\" mkdir "%abSolutionDir%_Pub\"
+        if exist %abNoteFile% del %abNoteFile%
+        echo Dependend: > %abNoteFile%
+        set abFirstWrite=0
+    )
 
-	:: Pulling dependent libraries
-	for /f "tokens=1* delims=" %%j in ('Type %abLatestLibrary% ^| findstr /r "MapLibrary.*\"%%i\""') do (
-	    call :MapLibrary "%%i" "%%j" || (exit /B 0)
-	)
+    :: Pulling dependent libraries
+    for /f "tokens=1* delims=" %%j in ('Type %abLatestLibrary% ^| findstr /r "MapLibrary.*\"%%i\""') do (
+        call :MapLibrary "%%i" "%%j" || (exit /B 1)
+    )
 )
 exit /B 0
 
@@ -70,6 +70,11 @@ if exist "%abSolutionDir%..\..\Publish\%newName%\%newName%-%newVersion%.7z" (
 ) else (
     call :ShowMessageERROR "%abSolutionDir%..\..\Publish\%newName%\%newName%-%newVersion%" || (exit /B 1)
 )
+:: Check if the recorded library version number is consistent with the latest released library
+if exist "%abSolutionDir%_Pub\%newName%\DependLibs.txt" (
+    call %abSolutionDir%..\..\Tools\AutoScript\CheckDependLibs.bat "%newName%" "%abSolutionDir%_Pub\%newName%\DependLibs.txt" %abLatestLibrary%
+    if %errorlevel% GTR 0 exit /B 1
+)
 exit /B 0
 
 :: Record library and its version number
@@ -81,15 +86,15 @@ set abNameTemp=%abName%
 :counter
 if not "%abNameTemp%"=="" (
     set /a abNameLen+=1
-	set "abNameTemp=%abNameTemp:~1%"
-	goto counter
+    set "abNameTemp=%abNameTemp:~1%"
+    goto counter
 )
 set abNameTemp=%abName%
 :inserter
 if %abNameLen% lss 30 (
     set /a abNameLen+=1
-	set "abNameTemp=%abNameTemp% "
-	goto inserter
+    set "abNameTemp=%abNameTemp% "
+    goto inserter
 )
 echo    %abNameTemp%%abVersion% >> %abNoteFile%
 exit /B 0
