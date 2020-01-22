@@ -37,9 +37,29 @@ At last, you can modify the template files of the header file and the source fil
 
 ## Structure
 
-[Published library packages](Publish/README.md)
+### Publish
 
-[Library items](LibraryItems/README.md)
+This directory stores published library packages. These libraries may be custom libraries or libraries compiled from free open source code.
 
-[Tools](Tools/README.md)
+See the link for more information: [Published library packages](Publish/README.md)
+
+### Library Items
+
+This directory stores the source code of all library projects.
+
+See the link for more information: [Library items](LibraryItems/README.md)
+
+### Tools
+
+This directory stores some tools that are convenient for project management and use.
+
+See the link for more information: [Tool list](Tools/README.md)
+
+## References
+
+* [OpenCASCADE](https://www.opencascade.com/content/open-source-core-technology)
+* [Google Test](https://github.com/google/googletest)
+* [TinyXML-2](https://github.com/leethomason/tinyxml2)
+* [SVGnest](https://github.com/Jack000/SVGnest)
+* [LinuxCNC](https://github.com/LinuxCNC/linuxcnc)
 
