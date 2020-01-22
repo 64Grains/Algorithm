@@ -3,7 +3,10 @@
 
 #include "pch.h"
 
+using namespace neat;
+
 // TODO: This is an example of a library function
-void fnNeatCore()
+int neat::fnNeatCore(int a, int b)
 {
+    return a + b;
 }

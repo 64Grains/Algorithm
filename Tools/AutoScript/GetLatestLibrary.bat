@@ -1,9 +1,11 @@
 @title Get Latest Library
 @echo off & setlocal EnableDelayedExpansion
 
-:: Usage: Batch script name + solution directory
+:: Usage: Batch script name + solution directory + exclude library name
+:: @exclude library name: This variable records the name of the library not saved to the DependLibs.txt file
 
 set abSolutionDir=%~1
+set abExcludeLib=%~2
 
 :: Pull the specified library package from the latest release library
 set abLatestLibrary="%abSolutionDir%..\..\Publish\PublishVersion.txt"
@@ -81,6 +83,10 @@ exit /B 0
 :RecordLibrary
 set abName=%~1
 set abVersion=%~2
+:: Check if library name is in exclusion list
+for %%i in (%abExcludeLib%) do (
+    if "%abName%" == "%%i" exit /B 0
+)
 set abNameLen=0
 set abNameTemp=%abName%
 :counter

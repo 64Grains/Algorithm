@@ -35,7 +35,7 @@ Assuming the library name is `NeatCore` and the library version is 1.100.0.0, th
 The file hierarchy is as follows:
 
 ```
-_Publish
+Publish
     NeatCore
         NeatCore-1.100.0.0.7z
         NeatCore-1.100.1.0.7z

@@ -3,7 +3,7 @@ NeatCore
 Version: 1.100.0.0
 
 Dependend:
-  None
+  gtest
 
 Update record:
 _________

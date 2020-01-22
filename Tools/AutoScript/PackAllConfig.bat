@@ -129,12 +129,14 @@ for %%i in (Debug Release) do (
 			
             call %abSolutionDir%%%i\%%j\%%k\%abSolutionName%Tester.exe || (
                 echo Unit test failed!
+                echo.
                 exit /B 1
             )
         )
     )
 )
 echo Unit tests run successfully!
+echo.
 exit /B 0
 
 :: Show error message
