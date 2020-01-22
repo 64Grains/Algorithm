@@ -73,7 +73,7 @@ for /f "delims=" %%i in (%abProjectFilter%) do (
         set abHeaderFile=!abTemp!
     )
 	
-    echo "%%i" | findstr /c:"<Filter>!abInterfaceFilter!</Filter>">nul && set abFlag=2
+    echo "%%i" | findstr /c:"<Filter>!abInterfaceFilter!">nul && set abFlag=2
     if !abFlag! EQU 2 (
         if not exist "!abProjectDir!\!abHeaderFile!" (
             call :ShowMessageERROR "!abProjectDir!\!abHeaderFile!"
