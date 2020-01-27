@@ -174,10 +174,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="NeatCore.h" />
+    <ClInclude Include="Neat_ErrorID.h" />
+    <ClInclude Include="Neat_FastVector.h" />
+    <ClInclude Include="Neat_Macro.h" />
+    <ClInclude Include="Neat_Math.h" />
+    <ClInclude Include="Neat_Point.h" />
+    <ClInclude Include="Neat_Precision.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="NeatCore.cpp" />
+    <ClCompile Include="Neat_Math.cpp" />
+    <ClCompile Include="Neat_Point.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

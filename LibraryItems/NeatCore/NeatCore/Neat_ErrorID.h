@@ -10,17 +10,27 @@
  exception defined in the file LICENSE.
 
 ***************************************************************************************************/
-#ifndef __NEAT_CORE_H_20200127__
-#define __NEAT_CORE_H_20200127__
+#ifndef __NEAT_ERRORID_H_20200127__
+#define __NEAT_ERRORID_H_20200127__
+
+#include <string>
 
 /**
- * This file contains all the interface files that are open to the public.
- * In order to facilitate external reference of this library, you only need to include this header file.
+ * This file defines the error message ID.
+ * The external program can replace the description of the resource file based on the ID.
  */
-#include "Neat_Macro.h"
-#include "Neat_ErrorID.h"
-#include "Neat_Precision.h"
-#include "Neat_Point.h"
-#include "Neat_Math.h"
+namespace neat
+{
+    /**
+     * Array or container subscript out of range
+     */
+    const std::string g_strSubscriptOutOfRange = "ID_CORE_SUBSCRIPT_OUT_OF_RANGE";
 
-#endif // __NEAT_CORE_H_20200127__
+    /**
+     * Divisor is zero
+     */
+    const std::string g_strDivisorEqualZero = "ID_CORE_DIVISOR_EQUAL_ZERO";
+
+} // End namespace neat
+
+#endif // __NEAT_ERRORID_H_20200127__
