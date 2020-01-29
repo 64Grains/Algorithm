@@ -40,6 +40,10 @@ namespace neat
     #define min3(a, b, c) (min(min(a, b), c))
 #endif
 
+/**
+ * It is assumed here that the first parameter value of the __CUT macro is smaller than the second parameter value,
+ * otherwise the result is unpredictable.
+ */
 #ifndef __CUT
     #define __CUT(x, low, up) ((x) = min(x, up), (x) = max(x, low))
 #endif
