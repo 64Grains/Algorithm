@@ -3,13 +3,17 @@
  Created by: dquan2007@163.com
  Copyright (c) 2020-2020
 
- This file is part of C++ NeatCore Library Tester.
+ This file is part of C++ NeatCore Library tester application.
 
  This library is free software; you can redistribute it and/or modify it under the terms of the GNU
  Lesser General Public License version 3 as published by the Free Software Foundation, with special
  exception defined in the file LICENSE.
 
 ***************************************************************************************************/
+#include "NeatCoreTester.h"
+
+using namespace neat;
+
 /**
  * This file unit tests defined macros.
  */

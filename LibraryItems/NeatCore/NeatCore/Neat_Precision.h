@@ -49,7 +49,7 @@ namespace neat
          */
         static bool IsAlmostEqual(double nLeft_, double nRight_, double nTolerance_)
         {
-            return fabs(nLeft_ - nRight_) < nTolerance_;
+            return fabs(nLeft_ - nRight_) <= nTolerance_;
         }
 
         /**

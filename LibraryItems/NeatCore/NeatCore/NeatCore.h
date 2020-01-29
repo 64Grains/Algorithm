@@ -22,5 +22,6 @@
 #include "Neat_Precision.h"
 #include "Neat_Point.h"
 #include "Neat_Math.h"
+#include "Neat_FastVector.h"
 
 #endif // __NEAT_CORE_H_20200127__

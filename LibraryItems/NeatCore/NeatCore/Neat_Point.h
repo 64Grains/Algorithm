@@ -113,7 +113,7 @@ namespace neat
         CAxisPoint& operator/=(TYPE nRatio_)
         {
             static_assert(!std::is_same<TYPE, bool>::value, "This type does not support this operator");
-            BODOR_RAISE_IF(nRatio_ == 0.0, g_strDivisorEqualZero);
+            NEAT_RAISE_IF(nRatio_ == 0.0, g_strDivisorEqualZero);
             for (int i = 0; i < N; ++i) {
                 m_ptPoint[i] /= nRatio_;
             }

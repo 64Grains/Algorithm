@@ -174,7 +174,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="NeatCoreTester.cpp" />
+    <ClCompile Include="NeatFastVectorUT.cpp" />
     <ClCompile Include="NeatMacroUT.cpp" />
+    <ClCompile Include="NeatMathUT.cpp" />
+    <ClCompile Include="NeatPointUT.cpp" />
+    <ClCompile Include="NeatPrecisionUT.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NeatCoreTester.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
