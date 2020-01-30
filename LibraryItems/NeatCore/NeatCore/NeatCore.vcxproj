@@ -178,6 +178,7 @@
     <ClInclude Include="Neat_FastVector.h" />
     <ClInclude Include="Neat_Macro.h" />
     <ClInclude Include="Neat_Math.h" />
+    <ClInclude Include="Neat_Node.h" />
     <ClInclude Include="Neat_Point.h" />
     <ClInclude Include="Neat_Precision.h" />
     <ClInclude Include="pch.h" />

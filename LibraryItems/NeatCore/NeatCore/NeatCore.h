@@ -17,11 +17,15 @@
  * This file contains all the interface files that are open to the public.
  * In order to facilitate external reference of this library, you only need to include this header file.
  */
-#include "Neat_Macro.h"
 #include "Neat_ErrorID.h"
+
+#include "Neat_Macro.h"
 #include "Neat_Precision.h"
-#include "Neat_Point.h"
-#include "Neat_Math.h"
+
 #include "Neat_FastVector.h"
+#include "Neat_Point.h"
+#include "Neat_Node.h"
+
+#include "Neat_Math.h"
 
 #endif // __NEAT_CORE_H_20200127__

@@ -19,12 +19,6 @@
 namespace neat
 {
     /**
-     * Point and vector types in 2D and 3D Cartesian coordinates
-     */
-    typedef CAxisPoint<double, 2> DPOINT2;
-    typedef CAxisPoint<double, 3> DPOINT3;
-
-    /**
      * Returns 1 or -1 depending on the sign of a numeric value of type double
      */
     inline double Sign(double nValue_)

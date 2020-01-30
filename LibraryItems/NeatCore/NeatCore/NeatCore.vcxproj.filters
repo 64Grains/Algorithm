@@ -5,12 +5,24 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
+    <Filter Include="Interface">
+      <UniqueIdentifier>{8fc3ad51-1e82-4b34-b933-cacc95592194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Neat Data">
+      <UniqueIdentifier>{0579411f-c2ce-44db-b9b6-4c95edfd879d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Neat Math">
+      <UniqueIdentifier>{e9b05a88-c349-42e2-b760-500040d7b02d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Neat Base">
+      <UniqueIdentifier>{d8a7998f-0c18-44e2-8e18-9911204911da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Neat Data">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Interface">
-      <UniqueIdentifier>{8fc3ad51-1e82-4b34-b933-cacc95592194}</UniqueIdentifier>
+    <Filter Include="Neat Math">
+      <UniqueIdentifier>{ad41c91e-6be0-49ac-b7d4-dc45c12b3285}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -20,34 +32,37 @@
     <ClInclude Include="pch.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Neat_Macro.h">
-      <Filter>Interface</Filter>
-    </ClInclude>
     <ClInclude Include="Neat_ErrorID.h">
       <Filter>Interface</Filter>
     </ClInclude>
-    <ClInclude Include="Neat_Precision.h">
-      <Filter>Interface</Filter>
+    <ClInclude Include="Neat_Macro.h">
+      <Filter>Interface\Neat Base</Filter>
     </ClInclude>
-    <ClInclude Include="Neat_Point.h">
-      <Filter>Interface</Filter>
+    <ClInclude Include="Neat_Precision.h">
+      <Filter>Interface\Neat Base</Filter>
     </ClInclude>
     <ClInclude Include="Neat_Math.h">
-      <Filter>Interface</Filter>
+      <Filter>Interface\Neat Math</Filter>
     </ClInclude>
     <ClInclude Include="Neat_FastVector.h">
-      <Filter>Interface</Filter>
+      <Filter>Interface\Neat Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Neat_Point.h">
+      <Filter>Interface\Neat Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Neat_Node.h">
+      <Filter>Interface\Neat Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Neat_Point.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Neat_Math.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Neat Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Neat_Point.cpp">
+      <Filter>Neat Data</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
