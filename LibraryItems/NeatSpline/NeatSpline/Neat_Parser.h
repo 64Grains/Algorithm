@@ -14,7 +14,7 @@
 #define __NEAT_PARSER_H_20200130__
 
 /**
- * This file defines the class interface for parsing splines.
+ * This file defines the interface for parsing splines.
  */
 namespace neat
 {

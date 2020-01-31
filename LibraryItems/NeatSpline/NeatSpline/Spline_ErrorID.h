@@ -51,6 +51,16 @@ namespace neat
      */
     const std::string g_strBezierParamsError = "ID_SPLINE_BEZIER_PARAMETERS_ERROR";
 
+    /**
+     * Function is not implemented
+     */
+    const std::string g_strFunctionNotImplemented = "ID_SPLINE_FUNCTION_NOT_IMPLEMENTED";
+
+    /**
+     * Unknown error
+     */
+    const std::string g_strUnknownError = "ID_SPLINE_UNKNOWN_ERROR";
+
 } // End namespace neat
 
 #endif // __SPLINE_ERRORID_H_20200130__

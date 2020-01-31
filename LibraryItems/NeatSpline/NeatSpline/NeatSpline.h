@@ -30,5 +30,6 @@
 #include "Neat_Parser.h"
 #include "Neat_Scatter.h"
 #include "Neat_Converter.h"
+#include "Neat_Fitter.h"
 
 #endif // __NEAT_SPLINE_H_20200130__

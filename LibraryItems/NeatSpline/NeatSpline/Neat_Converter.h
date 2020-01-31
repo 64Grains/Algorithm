@@ -14,7 +14,7 @@
 #define __NEAT_CONVERTER_H_20200130__
 
 /**
- * This file defines the class interface for converting splines.
+ * This file defines the interface for converting splines.
  */
 namespace neat
 {

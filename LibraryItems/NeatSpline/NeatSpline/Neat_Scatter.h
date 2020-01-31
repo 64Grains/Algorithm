@@ -14,7 +14,7 @@
 #define __NEAT_SCATTER_H_20200130__
 
 /**
- * This file defines the class interface for scatting splines.
+ * This file defines the interface for scatting splines.
  */
 namespace neat
 {

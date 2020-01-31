@@ -36,6 +36,12 @@
     <ClCompile Include="Neat_Converter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Nurbs_Interp.cpp">
+      <Filter>Nurbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Neat_Fitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -81,6 +87,12 @@
       <Filter>Nurbs</Filter>
     </ClInclude>
     <ClInclude Include="Nurbs_Parser.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Neat_Fitter.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Nurbs_Interp.h">
       <Filter>Nurbs</Filter>
     </ClInclude>
   </ItemGroup>

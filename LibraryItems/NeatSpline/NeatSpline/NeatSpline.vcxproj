@@ -190,11 +190,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="NeatSpline.h" />
+    <ClInclude Include="Neat_Fitter.h" />
     <ClInclude Include="Neat_Parser.h" />
     <ClInclude Include="Neat_Scatter.h" />
     <ClInclude Include="Neat_Converter.h" />
     <ClInclude Include="NRBSplineParser.h" />
     <ClInclude Include="NurbsDeflection.h" />
+    <ClInclude Include="Nurbs_Interp.h" />
     <ClInclude Include="Nurbs_Parser.h" />
     <ClInclude Include="NurbsPublic.h" />
     <ClInclude Include="NurbsRefiner.h" />
@@ -207,11 +209,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Neat_Fitter.cpp" />
     <ClCompile Include="Neat_Parser.cpp" />
     <ClCompile Include="Neat_Scatter.cpp" />
     <ClCompile Include="Neat_Converter.cpp" />
     <ClCompile Include="NurbsPublic.cpp" />
     <ClCompile Include="NurbsRefiner.cpp" />
+    <ClCompile Include="Nurbs_Interp.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
