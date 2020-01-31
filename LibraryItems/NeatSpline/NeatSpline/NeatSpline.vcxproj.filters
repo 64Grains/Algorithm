@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Nurbs">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NurbsPublic.cpp">
+      <Filter>Nurbs</Filter>
+    </ClCompile>
+    <ClCompile Include="NurbsRefiner.cpp">
+      <Filter>Nurbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Neat_Parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Neat_Scatter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Neat_Converter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NeatSpline.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Neat_Parser.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Neat_Scatter.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Spline_ErrorID.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="NurbsPublic.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="NRBSplineParser.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="RBSplineParser.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="RBSplineParser2.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="NurbsRefiner.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="NurbsDeflection.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Neat_Converter.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Nurbs_Converter.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Nurbs_Scatter.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Nurbs_Parser.h">
+      <Filter>Nurbs</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
