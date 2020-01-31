@@ -53,7 +53,7 @@ for %%i in (Debug Release) do (
                     exit /B 1
                 )
 
-                copy "%abSolutionDir%%%i\%%j\%%k\%abSolutionName%.dll" "%abPackPath%lib\%%i\%%j\%%k\" /D /Q /Y
+                xcopy "%abSolutionDir%%%i\%%j\%%k\%abSolutionName%.dll" "%abPackPath%lib\%%i\%%j\%%k\" /D /Q /Y
             )
         )
     )
