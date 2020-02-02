@@ -1,5 +1,5 @@
 /***************************************************************************************************
- Created on: 2020-01-27
+ Created on: 2020-02-02
  Created by: dquan2007@163.com
  Copyright (c) 2020-2020
 
@@ -10,17 +10,15 @@
  exception defined in the file LICENSE.
 
 ***************************************************************************************************/
-#ifndef __NEAT_CORE_H_20200127__
-#define __NEAT_CORE_H_20200127__
+#ifndef __NEAT_DATA_H_20200202__
+#define __NEAT_DATA_H_20200202__
 
 /**
- * This file contains all the interface files that are open to the public.
- * In order to facilitate external reference of this library, you only need to include this header file.
+ * This file contains all the interface files for basic data types that are open to the public.
  */
-#include "Neat_ErrorID.h"
-#include "Neat_Macro.h"
-#include "Neat_Precision.h"
-#include "Neat_Data.h"
-#include "Neat_Math.h"
+#include "Neat_Point.h"
+#include "Neat_FastVector.h"
+#include "Neat_Node.h"
+#include "Neat_Node2D.h"
 
-#endif // __NEAT_CORE_H_20200127__
+#endif // __NEAT_DATA_H_20200202__

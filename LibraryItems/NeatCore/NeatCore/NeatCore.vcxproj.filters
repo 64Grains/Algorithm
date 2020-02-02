@@ -53,6 +53,12 @@
     <ClInclude Include="Neat_Node.h">
       <Filter>Interface\Neat Data</Filter>
     </ClInclude>
+    <ClInclude Include="Neat_Data.h">
+      <Filter>Interface\Neat Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Neat_Node2D.h">
+      <Filter>Interface\Neat Data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
