@@ -61,6 +61,11 @@ namespace neat
     double ComputeAngle(const DPOINT2& ptVector_);
     double ComputeAngle(double nX_, double nY_);
 
+    /**
+     * Retrieve arc information in the two-dimensional Cartesian coordinate system based on start point, end point and bulge.
+     */
+    void RetrieveArcNode2D(const DPOINT2& ptStart_, const DPOINT2& ptEnd_, double nBulge_, ArcNode2D& ArcNode_);
+
 } // End namespace neat
 
 #endif // __NEAT_MATH_H_20200127__

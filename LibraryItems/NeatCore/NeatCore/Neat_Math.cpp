@@ -38,3 +38,43 @@ double neat::ComputeAngle(double nX_, double nY_)
 
     return _nAngle;
 }
+
+void neat::RetrieveArcNode2D(const DPOINT2& ptStart_, const DPOINT2& ptEnd_, double nBulge_, ArcNode2D& ArcNode_)
+{
+    NEAT_RAISE(Precision::IsAlmostEqual(nBulge_, 0.0, Precision::RealTolerance()), g_strIllegalArcBulge);
+
+    DPOINT2 _ptChordVector = ptEnd_ - ptStart_;
+    double _nChordLength = _ptChordVector.GetLength();
+    if (Precision::IsAlmostEqual(_nChordLength, 0.0, Precision::RealTolerance())) {
+        // Arc with chord too short is treated as point
+        ArcNode_.ptCenter = ptStart_;
+        ArcNode_.nRadius = 0.0;
+        ArcNode_.nStartAngle = 0.0;
+        ArcNode_.nEndAngle = 0.0;
+        return;
+    }
+
+    // Central angle
+    double _nCentralAngle = 4.0 * atan(nBulge_);
+
+    // Radius
+    double _nRadius = 0.5 * _nChordLength / sin(_nCentralAngle * 0.5);
+    ArcNode_.nRadius = fabs(_nRadius);
+
+    // Center
+    DPOINT2 _ptStretch = _ptChordVector * (_nRadius / _nChordLength);
+    double _nRevAngle = (Precision::PIE() - _nCentralAngle) * 0.5;
+    double _nCosAngle = cos(_nRevAngle);
+    double _nSinAngle = sin(_nRevAngle);
+    double _nDiffVectorX = _ptStretch[axis::x] * _nCosAngle - _ptStretch[axis::y] * _nSinAngle;
+    double _nDiffVectorY = _ptStretch[axis::x] * _nSinAngle + _ptStretch[axis::y] * _nCosAngle;
+
+    ArcNode_.ptCenter[axis::x] = ptStart_[axis::x] + _nDiffVectorX;
+    ArcNode_.ptCenter[axis::y] = ptStart_[axis::y] + _nDiffVectorY;
+
+    // Start angle
+    ArcNode_.nStartAngle = ComputeAngle(ptStart_ - ArcNode_.ptCenter);
+
+    // End angle
+    ArcNode_.nEndAngle = ArcNode_.nStartAngle + _nCentralAngle;
+}

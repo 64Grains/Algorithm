@@ -31,6 +31,11 @@ namespace neat
      */
     const std::string g_strDivisorEqualZero = "ID_CORE_DIVISOR_EQUAL_ZERO";
 
+    /**
+     * Illegal arc bulge
+     */
+    const std::string g_strIllegalArcBulge = "ID_CORE_ILLEGAL_ARC_BULGE";
+
 } // End namespace neat
 
 #endif // __NEAT_ERRORID_H_20200127__
