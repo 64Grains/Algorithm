@@ -28,6 +28,28 @@ void neat::ScatterNurbs(const NurbsNode2D* pNurbsNode_, double nDeflection_, std
     _Scatter2D.ScatterNurbs(pNurbsNode_, nDeflection_, vecScatterNodes_);
 }
 
+void neat::ScatterNurbs(const NurbsNode2D* pNurbsNode_, double nDeflection_, Polyline2D& Polyline2D_)
+{
+    // First convert the nurbs spline to bezier splines, and then convert each bezier spline to polyline
+    std::vector<BezierNode2D> _vecBezierNodes;
+    ConvertNurbsToBezier(pNurbsNode_, _vecBezierNodes);
+
+    Polyline2D _Polyline2D;
+    for (const auto& _BezierNode : _vecBezierNodes) {
+        _Polyline2D.vecNodes.clear();
+        ScatterBezier(&_BezierNode, nDeflection_, _Polyline2D);
+
+        if (Polyline2D_.vecNodes.empty()) {
+            Polyline2D_.nStartX = _Polyline2D.nStartX;
+            Polyline2D_.nStartY = _Polyline2D.nStartY;
+        }
+
+        for (const auto& _node : _Polyline2D.vecNodes) {
+            Polyline2D_.vecNodes.emplace_back(_node);
+        }
+    }
+}
+
 void neat::ScatterNurbs(const NurbsNode3D* pNurbsNode_, double nDeflection_, VECDPOINT3& vecScatterPoints_)
 {
     CNurbsScatter<DPOINT3, DPOINT4> _Scatter3D;
@@ -56,6 +78,12 @@ void neat::ScatterBezier(const BezierNode2D* pBezierNode_, double nDeflection_, 
 
     CNurbsScatter<DPOINT2, DPOINT3> _Scatter2D;
     _Scatter2D.ScatterNurbs(&_NurbsNode2D, nDeflection_, vecScatterNodes_);
+}
+
+void neat::ScatterBezier(const BezierNode2D* pBezierNode_, double nDeflection_, Polyline2D& Polyline2D_)
+{
+    CBezierConverter2D _Converter2D;
+    _Converter2D.ConvertBezierToPolyline(pBezierNode_, nDeflection_, Polyline2D_);
 }
 
 void neat::ScatterBezier(const BezierNode3D* pBezierNode_, double nDeflection_, VECDPOINT3& vecScatterPoints_)

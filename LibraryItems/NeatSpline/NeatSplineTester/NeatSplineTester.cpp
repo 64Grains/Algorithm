@@ -160,6 +160,50 @@ bool WritePointsToFile(const std::string& strFilePath_, const neat::VECDPOINT3& 
     return true;
 }
 
+bool WritePolylineToFile(const std::string& strFilePath_, const neat::Polyline2D& Polyline2D_)
+{
+    if (strFilePath_.empty()) {
+        printf("Invalid file path!\n");
+        return false;
+    }
+
+    if (Polyline2D_.vecNodes.empty()) {
+        printf("No data!\n");
+        return false;
+    }
+
+    FILE* _pFile = nullptr;
+    if (fopen_s(&_pFile, strFilePath_.c_str(), "w") != 0 || !_pFile) {
+        printf("Open file (%s) failed!\n", strFilePath_.c_str());
+        return false;
+    }
+
+    fprintf(_pFile, "G00 X%f Y%f\n", Polyline2D_.nStartX, Polyline2D_.nStartY);
+    for (size_t i = 0, _nSize = Polyline2D_.vecNodes.size(); i < _nSize; ++i) {
+        const Polyline2D::Node2D& _node = Polyline2D_.vecNodes[i];
+        if (fabs(_node.nBulge) < Precision::RealTolerance()) {
+            fprintf(_pFile, "G01 X%f Y%f\n", _node.nEndX, _node.nEndY);
+        }
+        else {
+            DPOINT2 _ptStart = (i == 0)
+                ? DPOINT2(Polyline2D_.nStartX, Polyline2D_.nStartY)
+                : DPOINT2(Polyline2D_.vecNodes[i - 1].nEndX, Polyline2D_.vecNodes[i - 1].nEndY);
+            DPOINT2 _ptEnd(Polyline2D_.vecNodes[i].nEndX, Polyline2D_.vecNodes[i].nEndY);
+            ArcNode2D _ArcNode;
+            RetrieveArcNode2D(_ptStart, _ptEnd, Polyline2D_.vecNodes[i].nBulge, _ArcNode);
+            if (_ArcNode.nEndAngle > _ArcNode.nStartAngle) {
+                fprintf(_pFile, "G03 X%f Y%f R%f\n", _ptEnd[axis::x], _ptEnd[axis::y], _ArcNode.nRadius);
+            }
+            else {
+                fprintf(_pFile, "G02 X%f Y%f R%f\n", _ptEnd[axis::x], _ptEnd[axis::y], _ArcNode.nRadius);
+            }
+        }
+    }
+
+    fclose(_pFile);
+    return true;
+}
+
 //////////////////////////////////////////////////////////////////////////
 // class CNurbsFileInfoList
 CNurbsFileInfoList::CNurbsFileInfoList()

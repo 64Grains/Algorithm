@@ -52,6 +52,11 @@ namespace neat
     const std::string g_strBezierParamsError = "ID_SPLINE_BEZIER_PARAMETERS_ERROR";
 
     /**
+     * Biarc fit parameters error
+     */
+    const std::string g_strBiarcFitParamsError = "ID_SPLINE_BIARC_FIT_PARAMETERS_ERROR";
+
+    /**
      * Function is not implemented
      */
     const std::string g_strFunctionNotImplemented = "ID_SPLINE_FUNCTION_NOT_IMPLEMENTED";

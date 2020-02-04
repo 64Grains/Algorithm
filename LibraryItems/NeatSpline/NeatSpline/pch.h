@@ -35,5 +35,6 @@
 #include "Nurbs_Scatter.h"
 #include "Nurbs_Converter.h"
 #include "Nurbs_Interp.h"
+#include "Bezier_Converter.h"
 
 #endif // __PCH_H_20200130__

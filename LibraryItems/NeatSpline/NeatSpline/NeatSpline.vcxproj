@@ -189,6 +189,7 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bezier_Converter.h" />
     <ClInclude Include="NeatSpline.h" />
     <ClInclude Include="Neat_Fitter.h" />
     <ClInclude Include="Neat_Parser.h" />
@@ -208,6 +209,7 @@
     <ClInclude Include="Spline_ErrorID.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bezier_Converter.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Neat_Fitter.cpp" />
     <ClCompile Include="Neat_Parser.cpp" />

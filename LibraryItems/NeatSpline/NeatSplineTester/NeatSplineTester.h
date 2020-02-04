@@ -36,6 +36,11 @@ bool ReadNurbsFromFile(const std::string& strFilePath_, std::vector<neat::NurbsN
 bool WritePointsToFile(const std::string& strFilePath_, const neat::VECDPOINT3& vecPoints_);
 
 /**
+ * Write polyline to file
+ */
+bool WritePolylineToFile(const std::string& strFilePath_, const neat::Polyline2D& Polyline2D_);
+
+/**
  * Test data information
  */
 struct NurbsFileInfo

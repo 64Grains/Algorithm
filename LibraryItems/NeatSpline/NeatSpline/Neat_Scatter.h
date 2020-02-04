@@ -28,6 +28,9 @@ namespace neat
     // Scatter nurbs node by given deflection, and output the scatter nodes.
     NEATSPLINE_API void ScatterNurbs(const NurbsNode2D* pNurbsNode_, double nDeflection_, std::vector<ScatterNode2D>& vecScatterNodes_);
 
+    // Scatter nurbs node by given deflection, and output the polyline.
+    NEATSPLINE_API void ScatterNurbs(const NurbsNode2D* pNurbsNode_, double nDeflection_, Polyline2D& Polyline2D_);
+
     /**
      * The scatter for three-dimensional nurbs node.
      */
@@ -47,6 +50,9 @@ namespace neat
 
     // Scatter bezier node by given deflection, and output the scatter nodes.
     NEATSPLINE_API void ScatterBezier(const BezierNode2D* pBezierNode_, double nDeflection_, std::vector<ScatterNode2D>& vecScatterNodes_);
+
+    // Scatter bezier node by given deflection, and output the polyline.
+    NEATSPLINE_API void ScatterBezier(const BezierNode2D* pBezierNode_, double nDeflection_, Polyline2D& Polyline2D_);
 
     /**
      * The scatter for three-dimensional bezier node.

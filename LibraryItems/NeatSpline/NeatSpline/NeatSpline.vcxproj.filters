@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Bezier">
+      <UniqueIdentifier>{b9b73812-4e94-43fe-ab05-01332354cf91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -41,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="Neat_Fitter.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bezier_Converter.cpp">
+      <Filter>Bezier</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="Nurbs_Interp.h">
       <Filter>Nurbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Bezier_Converter.h">
+      <Filter>Bezier</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
