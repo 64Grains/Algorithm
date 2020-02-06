@@ -1,0 +1,21 @@
+% This file lists test cases for nurbs splines.
+% The test case form is as follows: "Name1" "Name2" "Name3" "Name4" "Name5"
+% "Name1": Test case name. The test files corresponding to each test case are stored in the folder whose name is Name1.
+% "Name2": Test file, which stores the nurbs splines to be tested.
+% "Name3": Parser verification file, which stores the target knot and its corresponding point coordinates, first-order and second-order derivatives.
+% "Name4": Scatter verification file, which stores the scatter points corresponding to the nurbs spline under high accuracy.
+% "Name5": Converter verification file, which stores the converted bezier splines.
+
+"bat"              "bat.nc"            "Parser"       "Scatter"      "Converter.nc"
+"Bezier"           "Bezier.nc"         "Parser"       "Scatter"      "Converter.nc"
+"butterfly"        "butterfly.nc"      "Parser"       "Scatter"      "Converter.nc"
+"circle"           "circle.nc"         "Parser"       "Scatter"      "Converter.nc"
+"egg"              "egg.nc"            "Parser"       "Scatter"      "Converter.nc"
+"ellipse"          "ellipse.nc"        "Parser"       "Scatter"      "Converter.nc"
+"helix"            "helix.nc"          "Parser"       "Scatter"      "Converter.nc"
+"Line"             "Line.nc"           "Parser"       "Scatter"      "Converter.nc"
+"mouse"            "mouse.nc"          "Parser"       "Scatter"      "Converter.nc"
+"rectangle"        "rectangle.nc"      "Parser"       "Scatter"      "Converter.nc"
+"star"             "star.nc"           "Parser"       "Scatter"      "Converter.nc"
+"tube"             "tube.nc"           "Parser"       "Scatter"      "Converter.nc"
+"wave"             "wave.nc"           "Parser"       "Scatter"      "Converter.nc"
