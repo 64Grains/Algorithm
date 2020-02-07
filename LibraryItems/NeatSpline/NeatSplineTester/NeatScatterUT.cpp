@@ -13,6 +13,7 @@
 #include "NeatSplineTester.h"
 
 using namespace neat;
+using namespace tester;
 
 /**
  * This file unit tests the interface for scatting splines.
@@ -116,8 +117,7 @@ TEST(NeatScatterUT, 2DArcNurbsNode)
     EXPECT_GT((int)_vecScatterPoints.size(), 1);
     CheckDPoint2Equal(_vecScatterPoints.front(), _ptStartPoint, Precision::RealTolerance());
     CheckDPoint2Equal(_vecScatterPoints.back(), _ptEndPoint, Precision::RealTolerance());
-    for (size_t i = 0, _nSize = _vecScatterPoints.size(); i < _nSize; ++i)
-    {
+    for (size_t i = 0, _nSize = _vecScatterPoints.size(); i < _nSize; ++i) {
         double _nLength = _vecScatterPoints[i].GetLength();
         EXPECT_NEAR(_nLength, _nRadius, Precision::RealTolerance());
     }
@@ -129,8 +129,7 @@ TEST(NeatScatterUT, 2DArcNurbsNode)
     EXPECT_NEAR(_vecScatterNodes.back().nKnot, _NurbsNode.vecKnots.back(), Precision::RealTolerance());
     CheckDPoint2Equal(_vecScatterNodes.front().ptPoint, _ptStartPoint, Precision::RealTolerance());
     CheckDPoint2Equal(_vecScatterNodes.back().ptPoint, _ptEndPoint, Precision::RealTolerance());
-    for (size_t i = 0, _nSize = _vecScatterNodes.size(); i < _nSize; ++i)
-    {
+    for (size_t i = 0, _nSize = _vecScatterNodes.size(); i < _nSize; ++i) {
         double _nLength = _vecScatterNodes[i].ptPoint.GetLength();
         EXPECT_NEAR(_nLength, _nRadius, Precision::RealTolerance());
         EXPECT_GE(_vecScatterNodes[i].ptDeriv1.GetLength(), Precision::RealTolerance());
@@ -184,8 +183,7 @@ TEST(NeatScatterUT, 3DArcNurbsNode)
     EXPECT_GT((int)_vecScatterPoints.size(), 1);
     CheckDPoint3Equal(_vecScatterPoints.front(), _ptStartPoint, Precision::RealTolerance());
     CheckDPoint3Equal(_vecScatterPoints.back(), _ptEndPoint, Precision::RealTolerance());
-    for (size_t i = 0, _nSize = _vecScatterPoints.size(); i < _nSize; ++i)
-    {
+    for (size_t i = 0, _nSize = _vecScatterPoints.size(); i < _nSize; ++i) {
         double _nLength = _vecScatterPoints[i].GetLength();
         EXPECT_NEAR(_nLength, _nRadius, Precision::RealTolerance());
     }
@@ -197,8 +195,7 @@ TEST(NeatScatterUT, 3DArcNurbsNode)
     EXPECT_NEAR(_vecScatterNodes.back().nKnot, _NurbsNode.vecKnots.back(), Precision::RealTolerance());
     CheckDPoint3Equal(_vecScatterNodes.front().ptPoint, _ptStartPoint, Precision::RealTolerance());
     CheckDPoint3Equal(_vecScatterNodes.back().ptPoint, _ptEndPoint, Precision::RealTolerance());
-    for (size_t i = 0, _nSize = _vecScatterNodes.size(); i < _nSize; ++i)
-    {
+    for (size_t i = 0, _nSize = _vecScatterNodes.size(); i < _nSize; ++i) {
         double _nLength = _vecScatterNodes[i].ptPoint.GetLength();
         EXPECT_NEAR(_nLength, _nRadius, Precision::RealTolerance());
         EXPECT_GE(_vecScatterNodes[i].ptDeriv1.GetLength(), Precision::RealTolerance());
@@ -249,8 +246,7 @@ TEST(NeatScatterUT, 2DEllipseNurbsNode)
     EXPECT_GT((int)_vecScatterPoints.size(), 1);
     CheckDPoint2Equal(_vecScatterPoints.front(), _ptStartPoint, Precision::RealTolerance());
     CheckDPoint2Equal(_vecScatterPoints.back(), _ptEndPoint, Precision::RealTolerance());
-    for (size_t i = 0, _nSize = _vecScatterPoints.size(); i < _nSize; ++i)
-    {
+    for (size_t i = 0, _nSize = _vecScatterPoints.size(); i < _nSize; ++i) {
         double _nLength = (_vecScatterPoints[i] - _ptLeftFocus).GetLength()
             + (_vecScatterPoints[i] - _ptRightFocus).GetLength();
         EXPECT_NEAR(_nLength, 2.0 * _nLongRadius, _nDeflection);
@@ -266,8 +262,7 @@ TEST(NeatScatterUT, 2DEllipseNurbsNode)
 
     double _nMinCurvature = _nShortRadius / (_nLongRadius * _nLongRadius) - Precision::RealTolerance();
     double _nMaxCurvature = _nLongRadius / (_nShortRadius * _nShortRadius) + Precision::RealTolerance();
-    for (size_t i = 0, _nSize = _vecScatterNodes.size(); i < _nSize; ++i)
-    {
+    for (size_t i = 0, _nSize = _vecScatterNodes.size(); i < _nSize; ++i) {
         double _nLength = (_vecScatterNodes[i].ptPoint - _ptLeftFocus).GetLength()
             + (_vecScatterNodes[i].ptPoint - _ptRightFocus).GetLength();
         EXPECT_NEAR(_nLength, 2.0 * _nLongRadius, _nDeflection);
@@ -319,8 +314,7 @@ TEST(NeatScatterUT, 3DEllipseNurbsNode)
     EXPECT_GT((int)_vecScatterPoints.size(), 1);
     CheckDPoint3Equal(_vecScatterPoints.front(), _ptStartPoint, Precision::RealTolerance());
     CheckDPoint3Equal(_vecScatterPoints.back(), _ptEndPoint, Precision::RealTolerance());
-    for (size_t i = 0, _nSize = _vecScatterPoints.size(); i < _nSize; ++i)
-    {
+    for (size_t i = 0, _nSize = _vecScatterPoints.size(); i < _nSize; ++i) {
         double _nLength = (_vecScatterPoints[i] - _ptLeftFocus).GetLength()
             + (_vecScatterPoints[i] - _ptRightFocus).GetLength();
         EXPECT_NEAR(_nLength, 2.0 * _nLongRadius, _nDeflection);
@@ -336,8 +330,7 @@ TEST(NeatScatterUT, 3DEllipseNurbsNode)
 
     double _nMinCurvature = _nShortRadius / (_nLongRadius * _nLongRadius) - Precision::RealTolerance();
     double _nMaxCurvature = _nLongRadius / (_nShortRadius * _nShortRadius) + Precision::RealTolerance();
-    for (size_t i = 0, _nSize = _vecScatterNodes.size(); i < _nSize; ++i)
-    {
+    for (size_t i = 0, _nSize = _vecScatterNodes.size(); i < _nSize; ++i) {
         double _nLength = (_vecScatterNodes[i].ptPoint - _ptLeftFocus).GetLength()
             + (_vecScatterNodes[i].ptPoint - _ptRightFocus).GetLength();
         EXPECT_NEAR(_nLength, 2.0 * _nLongRadius, _nDeflection);

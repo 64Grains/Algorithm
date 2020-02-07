@@ -13,6 +13,7 @@
 #include "NeatSplineTester.h"
 
 using namespace neat;
+using namespace tester;
 
 /**
  * This file unit tests the interface for fitting splines.

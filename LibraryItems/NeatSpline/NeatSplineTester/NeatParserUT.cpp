@@ -13,6 +13,7 @@
 #include "NeatSplineTester.h"
 
 using namespace neat;
+using namespace tester;
 
 /**
  * This file unit tests the interface for parsing splines.
@@ -38,8 +39,7 @@ TEST(NeatParserUT, 1DLineNurbsNode)
 
     double _nxKnots[] = { 0.0, 0.5, 1.0 };
     double _nxAimPoints[] = { 92.926362318722781, 63.9623694586018275, 34.998376598480874 };
-    for (int i = 0; i < _countof(_nxKnots); ++i)
-    {
+    for (int i = 0; i < _countof(_nxKnots); ++i) {
         double _nKnot = _nxKnots[i];
         double _nAimPoint = _nxAimPoints[i];
         EXPECT_NO_THROW(_NurbsParser.GetNurbsPoint(_nKnot, _nPoint));
@@ -76,8 +76,7 @@ TEST(NeatParserUT, 2DLineNurbsNode)
     DPOINT2 _ptAimPoints[] = { DPOINT2(7.1641142410169740, 3.8890870071682211),
         DPOINT2(7.0994634359756636, 4.7007347412309377),
         DPOINT2(5.1384383963248146, 29.320096078250600) };
-    for (int i = 0; i < _countof(_nxKnots); ++i)
-    {
+    for (int i = 0; i < _countof(_nxKnots); ++i) {
         double _nKnot = _nxKnots[i];
         DPOINT2 _ptAimPoint = _ptAimPoints[i];
         EXPECT_NO_THROW(_NurbsParser.GetNurbsPoint(_nKnot, _ptPoint));
@@ -114,8 +113,7 @@ TEST(NeatParserUT, 3DLineNurbsNode)
     DPOINT3 _ptAimPoints[] = { DPOINT3(92.926362318722781, 19.659525043120819, 61.604467614663918),
         DPOINT3(63.9623694586018275, 22.3839554203619625, 54.466676252468421),
         DPOINT3(34.998376598480874, 25.108385797603106, 47.328884890272924) };
-    for (int i = 0; i < _countof(_nxKnots); ++i)
-    {
+    for (int i = 0; i < _countof(_nxKnots); ++i) {
         double _nKnot = _nxKnots[i];
         DPOINT3 _ptAimPoint = _ptAimPoints[i];
         EXPECT_NO_THROW(_NurbsParser.GetNurbsPoint(_nKnot, _ptPoint));
@@ -169,8 +167,7 @@ TEST(NeatParserUT, 2DArcNurbsNode)
     double _nxKnots[] = { 0.0, 0.25, 0.5, 0.75, 1.0 };
     DPOINT2 _ptAimPoints[] = { DPOINT2(_nRadius, 0.0), DPOINT2(0.0, _nRadius), DPOINT2(-_nRadius, 0.0),
         DPOINT2(0.0, -_nRadius), DPOINT2(_nRadius, 0.0) };
-    for (int i = 0; i < _countof(_nxKnots); ++i)
-    {
+    for (int i = 0; i < _countof(_nxKnots); ++i) {
         double _nKnot = _nxKnots[i];
         DPOINT2 _ptAimPoint = _ptAimPoints[i];
         EXPECT_NO_THROW(_NurbsParser.GetNurbsPoint(_nKnot, _ptPoint[0]));
@@ -227,8 +224,7 @@ TEST(NeatParserUT, 3DArcNurbsNode)
     double _nxCurvatures[] = { 2.0 / 3.0 * (_nRadius - _nHeight) / pow(_nHeight, 2),
         16.0 / (3.0 * sqrt(2.0)) * _nHeight / pow(2.0 * _nRadius - _nHeight, 2),
         2.0 / 3.0 * (_nRadius - _nHeight) / pow(_nHeight, 2) };
-    for (int i = 0; i < _countof(_nxKnots); ++i)
-    {
+    for (int i = 0; i < _countof(_nxKnots); ++i) {
         double _nKnot = _nxKnots[i];
         DPOINT3 _ptAimPoint = _ptAimPoints[i];
         EXPECT_NO_THROW(_NurbsParser.GetNurbsPoint(_nKnot, _ptPoint[0]));
@@ -290,8 +286,7 @@ TEST(NeatParserUT, 2DEllipseNurbsNode)
         _nShortRadius / (_nLongRadius * _nLongRadius),
         _nLongRadius / (_nShortRadius * _nShortRadius),
         _nShortRadius / (_nLongRadius * _nLongRadius) };
-    for (int i = 0; i < _countof(_nxKnots); ++i)
-    {
+    for (int i = 0; i < _countof(_nxKnots); ++i) {
         double _nKnot = _nxKnots[i];
         DPOINT2 _ptAimPoint = _ptAimPoints[i];
         EXPECT_NO_THROW(_NurbsParser.GetNurbsPoint(_nKnot, _ptPoint[0]));
@@ -350,8 +345,7 @@ TEST(NeatParserUT, 3DEllipseNurbsNode)
     double _nxCurvatures[] = { _nLongRadius / (_nShortRadius * _nShortRadius),
         _nShortRadius / (_nLongRadius * _nLongRadius),
         _nLongRadius / (_nShortRadius * _nShortRadius) };
-    for (int i = 0; i < _countof(_nxKnots); ++i)
-    {
+    for (int i = 0; i < _countof(_nxKnots); ++i) {
         double _nKnot = _nxKnots[i];
         DPOINT3 _ptAimPoint = _ptAimPoints[i];
         EXPECT_NO_THROW(_NurbsParser.GetNurbsPoint(_nKnot, _ptPoint[0]));
