@@ -67,7 +67,7 @@ namespace neat
          * @ if the radius is infinity, it represents a straight line
          */
         void ComputeArc(const DPOINT2& ptStartPoint_, const DPOINT2& ptStartTangent_, const DPOINT2& ptEndPoint_,
-            DPOINT2& ptCenter_, double& nRadius_, double nCentralAngle_) const;
+            DPOINT2& ptCenter_, double& nRadius_, double& nCentralAngle_) const;
 
         /**
          * Distance from point to line segment

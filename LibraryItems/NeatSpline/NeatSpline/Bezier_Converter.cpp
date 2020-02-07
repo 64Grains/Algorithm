@@ -297,7 +297,7 @@ void CBezierConverter2D::BiarcFit(const DPOINT2& ptStartPoint_, const DPOINT2& p
 }
 
 void CBezierConverter2D::ComputeArc(const DPOINT2& ptStartPoint_, const DPOINT2& ptStartTangent_, const DPOINT2& ptEndPoint_,
-    DPOINT2& ptCenter_, double& nRadius_, double nCentralAngle_) const
+    DPOINT2& ptCenter_, double& nRadius_, double& nCentralAngle_) const
 {
     NEAT_RAISE_IF(!DOUBLE_EQU(ptStartTangent_.GetLength(), 1.0), g_strBiarcFitParamsError);
 
