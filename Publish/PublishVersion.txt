@@ -1,2 +1,3 @@
 MapLibrary      "gtest"                     "1.10.0"                       
 MapLibrary      "NeatCore"                  "1.100.0.0"
+MapLibrary      "NeatSpline"                "1.100.0.0"
