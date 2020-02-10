@@ -126,7 +126,7 @@ bool tester::DowngradeDPoint(const neat::VECDPOINT3& vecPoint3D_, neat::VECDPOIN
     bool _bOnPlane = true;
     const double _nZCoor = vecPoint3D_.empty() ? 0.0 : vecPoint3D_.front()[axis::z];
     for (const auto& _ptPoint : vecPoint3D_) {
-        if (fabs(_ptPoint[axis::z] - _nZCoor) > Precision::RealTolerance()) {
+        if (!Precision::IsAlmostEqual(_ptPoint[axis::z], _nZCoor, Precision::RealTolerance())) {
             _bOnPlane = false;
             break;
         }
@@ -148,7 +148,7 @@ bool tester::DowngradeNurbsNode(const std::vector<neat::NurbsNode3D>& vecNurbs3D
     for (const auto& _Nurbs3D : vecNurbs3D_) {
         NurbsNode2D _Nurbs2D;
         for (const auto& _ptPoint : _Nurbs3D.vecPoles) {
-            if (fabs(_ptPoint[axis::z] - _nZCoor) > Precision::RealTolerance()) {
+            if (!Precision::IsAlmostEqual(_ptPoint[axis::z], _nZCoor, Precision::RealTolerance())) {
                 _bOnPlane = false;
                 break;
             }
@@ -180,7 +180,7 @@ bool tester::DowngradeBezierNode(const std::vector<neat::BezierNode3D>& vecBezie
     for (const auto& _Bezier3D : vecBezier3D_) {
         BezierNode2D _Bezier2D;
         for (const auto& _ptPoint : _Bezier3D.vecPoles) {
-            if (fabs(_ptPoint[axis::z] - _nZCoor) > Precision::RealTolerance()) {
+            if (!Precision::IsAlmostEqual(_ptPoint[axis::z], _nZCoor, Precision::RealTolerance())) {
                 _bOnPlane = false;
                 break;
             }
@@ -209,15 +209,15 @@ bool tester::DowngradeScatterNode(const std::vector<neat::ScatterNode3D>& vecSca
     bool _bOnPlane = true;
     const double _nZCoor = vecScatter3D_.empty() ? 0.0 : vecScatter3D_.front().ptPoint[axis::z];
     for (const auto& _Scatter3D : vecScatter3D_) {
-        if (fabs(_Scatter3D.ptPoint[axis::z] - _nZCoor) > Precision::RealTolerance()) {
+        if (!Precision::IsAlmostEqual(_Scatter3D.ptPoint[axis::z], _nZCoor, Precision::RealTolerance())) {
             _bOnPlane = false;
             break;
         }
-        else if (fabs(_Scatter3D.ptDeriv1[axis::z]) > Precision::RealTolerance()) {
+        else if (!Precision::IsAlmostEqual(_Scatter3D.ptDeriv1[axis::z], 0.0, Precision::RealTolerance())) {
             _bOnPlane = false;
             break;
         }
-        else if (fabs(_Scatter3D.ptDeriv2[axis::z]) > Precision::RealTolerance()) {
+        else if (!Precision::IsAlmostEqual(_Scatter3D.ptDeriv2[axis::z], 0.0, Precision::RealTolerance())) {
             _bOnPlane = false;
             break;
         }
@@ -428,7 +428,7 @@ bool tester::WritePolylineToFile(const std::string& strFilePath_, const neat::Po
     fprintf(_pFile, "G00 X%f Y%f\n", Polyline2D_.nStartX, Polyline2D_.nStartY);
     for (size_t i = 0, _nSize = Polyline2D_.vecNodes.size(); i < _nSize; ++i) {
         const Polyline2D::Node2D& _node = Polyline2D_.vecNodes[i];
-        if (fabs(_node.nBulge) < Precision::RealTolerance()) {
+        if (Precision::IsAlmostEqual(_node.nBulge, 0.0, Precision::RealTolerance())) {
             fprintf(_pFile, "G01 X%f Y%f\n", _node.nEndX, _node.nEndY);
         }
         else {

@@ -148,7 +148,7 @@ static bool IsRationalSpline(const VECDOUBLE& vecWeights_)
 
     double _nWeight = vecWeights_.front();
     for (size_t i = 1; i < vecWeights_.size(); ++i) {
-        if (fabs(vecWeights_[i] - _nWeight) > Precision::RealTolerance()) {
+        if (!Precision::IsAlmostEqual(vecWeights_[i], _nWeight, Precision::RealTolerance())) {
             return true;
         }
     }

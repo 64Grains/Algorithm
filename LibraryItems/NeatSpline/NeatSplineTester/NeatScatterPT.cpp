@@ -188,7 +188,7 @@ static void CheckPolylinesSimilar(const VECDPOINT2& vecLeft_, const VECDPOINT2& 
     while (_nLeftIndex < vecLeft_.size() && _nRightIndex < vecRight_.size()) {
         double _nLeftDist = DistPointToSegment(vecRight_[_nRightIndex - 1], vecRight_[_nRightIndex], vecLeft_[_nLeftIndex]);
         double _nRightDist = DistPointToSegment(vecLeft_[_nLeftIndex - 1], vecLeft_[_nLeftIndex], vecRight_[_nRightIndex]);
-        if (fabs(_nLeftDist - _nRightDist) < Precision::RealTolerance()) {
+        if (Precision::IsAlmostEqual(_nLeftDist, _nRightDist, Precision::RealTolerance())) {
             if (vecLeft_.size() < vecRight_.size()) {
                 ASSERT_NEAR(_nRightDist, 0.0, nTolerance_);
                 ++_nRightIndex;
@@ -219,7 +219,7 @@ static void CheckPolylinesSimilar(const Polyline2D& Polyline_, const VECDPOINT2&
     _vecPoints.emplace_back(DPOINT2(Polyline_.nStartX, Polyline_.nStartY));
     for (const auto& _node : Polyline_.vecNodes) {
         DPOINT2 _ptPoint(_node.nEndX, _node.nEndY);
-        if (fabs(_node.nBulge) < Precision::RealTolerance()) { // line
+        if (Precision::IsAlmostEqual(_node.nBulge, 0.0, Precision::RealTolerance())) { // line
             _vecPoints.emplace_back(_ptPoint);
         }
         else { // arc
@@ -252,7 +252,7 @@ static void CheckPolylinesSimilar(const VECDPOINT3& vecLeft_, const VECDPOINT3& 
     while (_nLeftIndex < vecLeft_.size() && _nRightIndex < vecRight_.size()) {
         double _nLeftDist = DistPointToSegment(vecRight_[_nRightIndex - 1], vecRight_[_nRightIndex], vecLeft_[_nLeftIndex]);
         double _nRightDist = DistPointToSegment(vecLeft_[_nLeftIndex - 1], vecLeft_[_nLeftIndex], vecRight_[_nRightIndex]);
-        if (fabs(_nLeftDist - _nRightDist) < Precision::RealTolerance()) {
+        if (Precision::IsAlmostEqual(_nLeftDist, _nRightDist, Precision::RealTolerance())) {
             if (vecLeft_.size() < vecRight_.size()) {
                 ASSERT_NEAR(_nRightDist, 0.0, nTolerance_);
                 ++_nRightIndex;
