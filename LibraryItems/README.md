@@ -203,3 +203,59 @@ This function retrieves arc information in the two-dimensional Cartesian coordin
 
 ## Project `NeatSpline`
 
+This library defines the parser, scatter, converter and fitter for splines. They will be introduced separately below.
+
+### Spline parser
+
+- `class CNurbsParser1D`
+
+This class is the parser for one-dimensional nurbs spline, which can calculate the point coordinate, first-order and second-order derivatives at the specified knot.
+
+- `class CNurbsParser2D`
+
+This class is the parser for two-dimensional nurbs spline, which can calculate the point coordinate, first-order and second-order derivatives at the specified knot.
+
+- `class CNurbsParser3D`
+
+This class is the parser for three-dimensional nurbs spline, which can calculate the point coordinate, first-order and second-order derivatives at the specified knot.
+
+- `class CBezierParser2D`
+
+This class is the parser for two-dimensional bezier spline, which can calculate the point coordinate, first-order and second-order derivatives at the specified knot.
+
+- `class CBezierParser3D`
+
+This class is the parser for three-dimensional bezier spline, which can calculate the point coordinate, first-order and second-order derivatives at the specified knot.
+
+### Spline scatter
+
+- `ScatterNurbs`
+
+This function is an overloaded function than can scatter two-dimensional nurbs spline into scattered points, scattered nodes, or polyline with the specified precision, and can scatter three-dimensional nurbs spline into scattered points or scattered nodes with the specified precision.
+
+- `ScatterBezier`
+
+This function is an overloaded function than can scatter two-dimensional bezier spline into scattered points, scattered nodes, or polyline with the specified precision, and can scatter three-dimensional bezier spline into scattered points or scattered nodes with the specified precision.
+
+### Spline converter
+
+- `ConvertNurbsToBezier`
+
+This function converts the nurbs spline to bezier splines.
+
+This function is an overloaded function than can convert two-dimensional nurbs spline and three-dimensional nurbs spline.
+
+### Spline fitter
+
+- `CNurbsInterp1D`
+
+This class is the interpolator for one-dimensional nurbs spline, which can generate nurbs spline by interpolating fit points based on given conditions (start tangent vector, end tangent vector, knot vector, but these are not necessary).
+
+- `CNurbsInterp2D`
+
+This class is the interpolator for two-dimensional nurbs spline, which can generate nurbs spline by interpolating fit points based on given conditions (start tangent vector, end tangent vector, knot vector, but these are not necessary).
+
+- `CNurbsInterp3D`
+
+This class is the interpolator for three-dimensional nurbs spline, which can generate nurbs spline by interpolating fit points based on given conditions (start tangent vector, end tangent vector, knot vector, but these are not necessary).
+
