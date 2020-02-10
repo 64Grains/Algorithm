@@ -21,7 +21,7 @@
 namespace neat
 {
     /**
-     * A custom fasr container of type std::vector.
+     * A custom fast container of type std::vector.
      * This container retains the elements in std::vector and controls the state of the fast container by manipulating the index.
      */
     template<typename TYPE>
