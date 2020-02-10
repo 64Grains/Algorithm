@@ -23,7 +23,7 @@ namespace neat
     /**
      * The Precision class provides a set of functions that define the standard of precision used when comparing two double
      * values under normal circumstances.
-     * It is not recommended to directly use == to compare two floating point numbers. When comparing floating point numbers.
+     * It is not recommended to directly use == to compare two floating point numbers. When comparing floating point numbers,
      * you should judge within the given accuracy range.
      * In addition, when comparing floating point numbers, you should avoid the "big numbers eat decimals" problem, such as:
      * double Precision = ...
@@ -39,7 +39,7 @@ namespace neat
         /**
          * Use this precision when comparing two double precsion floating point values, such as:
          * double x1 = ..., x2 = ...;
-         * if ( fabs( x2 - x1 ) < Precision::RealPrecision() ) ...
+         * if ( fabs( x2 - x1 ) < Precision::RealTolerance() ) ...
          */
         static double RealTolerance() { return 1.0e-9; }
         static double SquareRealTolerance() { return RealTolerance() * RealTolerance(); }
