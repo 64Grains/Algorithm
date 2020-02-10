@@ -54,17 +54,19 @@ namespace neat
      * We tend to turn this macro off when compiling the Release version in order to improve the efficiency of the program,
      * but there is a risk that the exception is not thrown in time, and the program's behavior may unknowable.
      */
-#ifndef NO_EXCEPTION_FOR_NEAT
-    #define NEAT_RAISE_IF(CONDITION, MESSAGE) \
-        if (CONDITION) { \
-            char _szBuffer[64] = { '\0' }; \
-            _ultoa_s(__LINE__, _szBuffer, 10); \
-            std::string _strMsg = "Error(File " + std::string(__FILE__) + " - "; \
-            _strMsg += "Line " + std::string(_szBuffer) + "): "; \
-            throw std::domain_error(_strMsg + MESSAGE); \
-        }
-#else
-    #define NEAT_RAISE_IF(CONDITION, MESSAGE)
+#ifndef NEAT_RAISE_IF
+    #ifndef NO_EXCEPTION_FOR_NEAT
+        #define NEAT_RAISE_IF(CONDITION, MESSAGE) \
+            if (CONDITION) { \
+                char _szBuffer[64] = { '\0' }; \
+                _ultoa_s(__LINE__, _szBuffer, 10); \
+                std::string _strMsg = "Error(File " + std::string(__FILE__) + " - "; \
+                _strMsg += "Line " + std::string(_szBuffer) + "): "; \
+                throw std::domain_error(_strMsg + MESSAGE); \
+            }
+    #else
+        #define NEAT_RAISE_IF(CONDITION, MESSAGE)
+    #endif
 #endif
 
 #ifndef NEAT_RAISE
