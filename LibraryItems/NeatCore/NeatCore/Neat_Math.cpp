@@ -1,7 +1,7 @@
 /***************************************************************************************************
  Created on: 2020-01-27
  Created by: dquan2007@163.com
- Copyright (c) 2020-2027
+ Copyright (c) 2020-2020
 
  This file is part of C++ NeatCore Library.
 
