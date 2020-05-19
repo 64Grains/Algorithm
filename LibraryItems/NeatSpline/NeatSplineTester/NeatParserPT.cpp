@@ -176,7 +176,7 @@ TEST_P(CNurbsParserTest, NurbsFiles)
     }
 }
 
-INSTANTIATE_TEST_CASE_P(NeatParserPT, CNurbsParserTest, testing::ValuesIn(gs_listTestFileInfo));
+INSTANTIATE_TEST_SUITE_P(NeatParserPT, CNurbsParserTest, testing::ValuesIn(gs_listTestFileInfo));
 
 //////////////////////////////////////////////////////////////////////////
 // local function

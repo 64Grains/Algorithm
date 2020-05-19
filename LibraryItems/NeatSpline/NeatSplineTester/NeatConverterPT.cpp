@@ -77,7 +77,7 @@ TEST_P(CNurbsConverterTest, NurbsFiles)
     }
 }
 
-INSTANTIATE_TEST_CASE_P(NeatConverterPT, CNurbsConverterTest, testing::ValuesIn(gs_listTestFileInfo));
+INSTANTIATE_TEST_SUITE_P(NeatConverterPT, CNurbsConverterTest, testing::ValuesIn(gs_listTestFileInfo));
 
 //////////////////////////////////////////////////////////////////////////
 // local function

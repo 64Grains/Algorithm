@@ -145,7 +145,7 @@ TEST_P(CNurbsScatterTest, NurbsFiles)
     }
 }
 
-INSTANTIATE_TEST_CASE_P(NeatScatterPT, CNurbsScatterTest, testing::ValuesIn(gs_listTestFileInfo));
+INSTANTIATE_TEST_SUITE_P(NeatScatterPT, CNurbsScatterTest, testing::ValuesIn(gs_listTestFileInfo));
 
 //////////////////////////////////////////////////////////////////////////
 // local function
