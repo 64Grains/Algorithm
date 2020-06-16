@@ -91,11 +91,19 @@ namespace neat
             }
         }
 
-        // select the middle knot between two no repeat knots
+        // Insert internal knots to avoid periodic or symmetrical control points
+        int _nInnerCount = max(2, pNurbsNode_->nDegree - 1);
         for (int i = 1, _nSize = static_cast<int>(_vecValidKnots.size()); i < _nSize; ++i) {
-            double _nMiddleKnot = 0.5 * (_vecValidKnots[i - 1] + _vecValidKnots[i]);
-            QuasiFlecheNurbs(nDeflection_, _vecValidKnots[i - 1], _nMiddleKnot);
-            QuasiFlecheNurbs(nDeflection_, _nMiddleKnot, _vecValidKnots[i]);
+            double _nStartKnot = _vecValidKnots[i - 1];
+            for (int j = 1; j < _nInnerCount; ++j)
+            {
+                double _nRatio = 1.0 * j / _nInnerCount;
+                double _nEndKnot = (1.0 - _nRatio) * _vecValidKnots[i - 1] + _nRatio * _vecValidKnots[i];
+                QuasiFlecheNurbs(nDeflection_, _nStartKnot, _nEndKnot);
+                _nStartKnot = _nEndKnot;
+            }
+
+            QuasiFlecheNurbs(nDeflection_, _nStartKnot, _vecValidKnots[i]);
         }
     }
 
