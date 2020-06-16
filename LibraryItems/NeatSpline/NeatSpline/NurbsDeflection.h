@@ -93,6 +93,13 @@ namespace neat
 
         // Insert internal knots to avoid periodic or symmetrical control points
         int _nInnerCount = max(2, pNurbsNode_->nDegree - 1);
+
+        // Adjust the number internal knots to even number
+        if (_nInnerCount % 2 != 0)
+        {
+            _nInnerCount += 1;
+        }
+
         for (int i = 1, _nSize = static_cast<int>(_vecValidKnots.size()); i < _nSize; ++i) {
             double _nStartKnot = _vecValidKnots[i - 1];
             for (int j = 1; j < _nInnerCount; ++j)
